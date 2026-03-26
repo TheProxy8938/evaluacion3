@@ -55,11 +55,11 @@ async def startup():
         # Probar conexión a la base de datos
         conn = DatabaseConnection.get_connection()
         if conn.is_connected():
-            print("✓ Conexión a base de datos exitosa")
-        print("✓ API lista para recibir solicitudes")
-        print(f"✓ Disponible en: http://{API_HOST}:{API_PORT}")
+            print("[OK] Conexión a base de datos exitosa")
+        print("[OK] API lista para recibir solicitudes")
+        print(f"[OK] Disponible en: http://{API_HOST}:{API_PORT}")
     except Exception as e:
-        print(f"✗ Error al conectar con la base de datos: {e}")
+        print(f"[ERROR] Error al conectar con la base de datos: {e}")
         raise
 
 @app.on_event("shutdown")

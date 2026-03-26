@@ -47,7 +47,7 @@ class FotoHandler:
             return foto_bytes
             
         except Exception as e:
-            print(f"❌ Error decodificando base64: {e}")
+            print(f"[ERROR] Error decodificando base64: {e}")
             return None
     
     @staticmethod
@@ -63,7 +63,7 @@ class FotoHandler:
             bool: True si se guardó correctamente, False si no
         """
         if not foto_bytes or len(foto_bytes) == 0:
-            print(f"⚠️  Foto vacía para paquete {paquete_id}")
+            print(f"[ADVERTENCIA] Foto vacía para paquete {paquete_id}")
             return False
         
         try:
@@ -81,13 +81,13 @@ class FotoHandler:
             cursor.execute(update_query, (foto_bytes, paquete_id))
             
             conn.commit()
-            print(f"✓ Foto guardada en DB para paquete {paquete_id} ({len(foto_bytes)} bytes)")
+            print(f"[OK] Foto guardada en DB para paquete {paquete_id} ({len(foto_bytes)} bytes)")
             cursor.close()
             
             return True
             
         except Error as e:
-            print(f"❌ Error guardando foto en DB: {e}")
+            print(f"[ERROR] Error guardando foto en DB: {e}")
             return False
     
     @staticmethod
@@ -134,15 +134,15 @@ class FotoHandler:
             
             tamaño_foto = len(foto_bytes) if foto_bytes else 0
             mensaje = f"Entrega registrada: GPS ({latitud}, {longitud}), Foto ({tamaño_foto} bytes)"
-            print(f"✓ {mensaje}")
+            print(f"[OK] {mensaje}")
             
             return True, mensaje
             
         except Error as e:
-            print(f"❌ Error guardando entrega: {e}")
+            print(f"[ERROR] Error guardando entrega: {e}")
             return False, f"Error en base de datos: {str(e)}"
         except Exception as e:
-            print(f"❌ Error inesperado: {e}")
+            print(f"[ERROR] Error inesperado: {e}")
             return False, f"Error: {str(e)}"
     
     @staticmethod
@@ -172,7 +172,7 @@ class FotoHandler:
             return None
             
         except Error as e:
-            print(f"❌ Error recuperando foto: {e}")
+            print(f"[ERROR] Error recuperando foto: {e}")
             return None
     
     @staticmethod
@@ -202,12 +202,12 @@ class FotoHandler:
             if result:
                 max_size = int(result['Value'])
                 max_mb = max_size / (1024 * 1024)
-                print(f"✓ max_allowed_packet: {max_mb:.2f} MB")
+                print(f"[OK] max_allowed_packet: {max_mb:.2f} MB")
                 
                 if max_size < (20 * 1024 * 1024):  # Menos de 20MB
-                    print(f"⚠️  Advertencia: max_allowed_packet es bajo para fotos grandes")
+                    print(f"[ADVERTENCIA] max_allowed_packet es bajo para fotos grandes")
             
             cursor.close()
             
         except Error as e:
-            print(f"❌ Error verificando configuración: {e}")
+            print(f"[ERROR] Error verificando configuración: {e}")

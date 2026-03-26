@@ -1,28 +1,28 @@
-# 📦 PaquExpress - Sistema de Entregas Inteligente
+# PaquExpress - Sistema de Entregas Inteligente
 
 **Aplicación móvil en Flutter** para registro y seguimiento de entregas de paquetes con validación GPS, captura de fotografía y autenticación segura.
 
 ---
 
-## 🎯 Características Principales
+## Características Principales
 
-### Funcionalidades Básicas ✓
-- ✅ Seleccionar paquete desde lista de entregas asignadas
-- ✅ Capturar fotografía como evidencia de entrega
-- ✅ Obtener ubicación GPS del dispositivo
-- ✅ Guardar datos en base de datos MySQL
+### Funcionalidades Básicas
+- Seleccionar paquete desde lista de entregas asignadas
+- Capturar fotografía como evidencia de entrega
+- Obtener ubicación GPS del dispositivo
+- Guardar datos en base de datos MySQL
 
-### Funcionalidades Escaladas ✓
-- ✅ **Autenticación Segura**: Login/Registro con validación de credenciales
-- ✅ **Encriptación**: Contraseñas hasheadas con BCrypt
-- ✅ **Gestión de Sesiones**: JWT tokens con expiración configurable
-- ✅ **Interfaz Intuitiva**: Navegación fluida entre pantallas
-- ✅ **Validación GPS**: Obtención de coordenadas en tiempo real
-- ✅ **Captura de Fotos**: Desde cámara o galería del dispositivo
+### Funcionalidades Escaladas
+- **Autenticación Segura**: Login/Registro con validación de credenciales
+- **Encriptación**: Contraseñas hasheadas con BCrypt
+- **Gestión de Sesiones**: JWT tokens con expiración configurable
+- **Interfaz Intuitiva**: Navegación fluida entre pantallas
+- **Validación GPS**: Obtención de coordenadas en tiempo real
+- **Captura de Fotos**: Desde cámara o galería del dispositivo
 
 ---
 
-## 📋 Requisitos
+## Requisitos del Sistema
 
 ### Backend (FastAPI)
 - **Python 3.10+**
@@ -38,7 +38,7 @@
 
 ---
 
-## 🚀 Instalación y Setup
+## Instalación y Configuración
 
 ### 1. Preparar Base de Datos MySQL
 
@@ -102,26 +102,26 @@ flutter run
 
 ---
 
-## 📱 Guía de Uso
+## Guía de Uso
 
-1. **Login/Registro**: Ingresa credenciales
-2. **Seleccionar Paquete**: Escoge de la lista de entregas
-3. **Capturar Foto**: Fotografía de evidencia
-4. **Obtener GPS**: Ubicación automática
-5. **Entregar**: Guarda todo en BD
-
----
-
-## 🔐 Seguridad
-
-- ✅ JWT Authentication
-- ✅ BCrypt Password Hashing
-- ✅ Validación de Tokens
-- ✅ CORS Enabled
+1. **Login/Registro**: Ingresa tus credenciales
+2. **Seleccionar Paquete**: Escoge un paquete de la lista de entregas
+3. **Capturar Foto**: Toma una fotografía como evidencia de entrega
+4. **Obtener GPS**: La ubicación se captura automáticamente
+5. **Entregar**: Guarda todos los datos en la base de datos
 
 ---
 
-## 📊 Estructura
+## Seguridad
+
+- JWT Authentication - Autenticación segura con tokens
+- BCrypt Password Hashing - Contraseñas encriptadas
+- Validación de Tokens - Control de acceso en endpoints
+- CORS Enabled - Configuración de seguridad para solicitudes cruzadas
+
+---
+
+## Estructura del Proyecto
 
 ```
 evaluacion_u3/
