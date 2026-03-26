@@ -1,0 +1,11 @@
+fastapi==0.115.5
+uvicorn[standard]==0.32.0
+mysql-connector-python==8.2.0
+pydantic==2.10.5
+python-multipart==0.0.6
+python-jose==3.3.0
+passlib==1.7.4
+bcrypt==4.1.2
+PyJWT==2.12.1
+python-dotenv==1.0.1
+Pillow==11.1.0
